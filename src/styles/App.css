@@ -1,0 +1,24 @@
+h2 {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.monsoon,
+.beams {
+  width: 100vw;
+  padding: 3rem 0.25rem;
+}
+
+.monsoon {
+  background: white;
+  color: #333;
+}
+
+.beams {
+  background: linear-gradient(rgba(0,0,0,0.7), white);
+}
