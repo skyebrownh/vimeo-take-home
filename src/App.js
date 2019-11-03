@@ -1,6 +1,8 @@
 import React from 'react';
 import './styles/App.css';
 
+import Carousel from './components/Carousel';
+
 const App = () => {
   return (
     <main>
@@ -31,9 +33,7 @@ const App = () => {
           </div>
         </div>
       </section>
-      {/* <div className="carousel">
-
-      </div> */}
+      <Carousel />
     </main>
   );
 }
