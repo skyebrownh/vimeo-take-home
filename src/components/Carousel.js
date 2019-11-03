@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 
-import Img0 from '../images/hunt-for-the-wilderpeople.jpg';
-import Img1 from '../images/nichts-passiert.jpeg';
-import Img2 from '../images/vice-versa-good-company.jpg';
-import Img3 from '../images/the-fourth-phase.jpg';
-import Img4 from '../images/full-moon.jpg';
+import images from '../utlis/constants';
 
 const Arrow = ({ direction, handleClick, icon }) => {
   return (
@@ -14,16 +10,26 @@ const Arrow = ({ direction, handleClick, icon }) => {
   );
 }
 
-const ImgSlide = () => {
+const ImgSlide = ({ url, title, desc }) => {
   return (
     <div className="img-slide">
-    
+      <img src={url} />
+      <div className="content">
+        <h3>{title}</h3>
+        <p>{desc}</p>
+        <div className="btn-group">
+          <button className="buy-now">
+            {/* TODO: icon */}
+            Buy Now
+          </button>
+          <button className="trailer">Watch Trailer</button>
+        </div>
+      </div>
     </div>
   );
 }
 
 const Carousel = () => {
-  const images = [Img0, Img1, Img2, Img3, Img4];
   const [currIndx, setcurrIndx] = useState(0);
 
   const prev = () => {
@@ -42,9 +48,13 @@ const Carousel = () => {
 
   return (
     <section className="carousel">
-      <Arrow direction={'left'} handleClick={prev} icon={/* FIXME: */} />
-      <ImgSlide />
-      <Arrow direction={'right'} handleClick={next} icon={/* FIXME: */} />
+      <Arrow direction={'left'} handleClick={prev} icon={/* TODO: */} />
+      <ImgSlide
+        url={images[currIndx].url}
+        title={images[currIndx].title}
+        desc={images[currIndx].desc}
+      />
+      <Arrow direction={'right'} handleClick={next} icon={/* TODO: */} />
     </section>
   );
 }
