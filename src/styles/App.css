@@ -41,7 +41,7 @@ p {
 
 /* beams */
 .beams {
-  background: linear-gradient(rgba(0,0,0,0.7) 75%, white);
+  background: linear-gradient(rgba(0,0,0,0.7) 50%, white);
   color: white;
 }
 
