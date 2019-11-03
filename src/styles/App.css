@@ -1,3 +1,9 @@
+main {
+  /* FIXME: */
+  background: black;
+}
+
+/* base */
 h2 {
   text-transform: uppercase;
   font-weight: bold;
@@ -10,15 +16,72 @@ img {
 
 .monsoon,
 .beams {
-  width: 100vw;
-  padding: 3rem 0.25rem;
+  width: 95%;
+  padding: 8.5rem 0.25rem;
+  margin: 0 auto;
 }
 
+@media (min-width: 425px) {
+  img {
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .monsoon,
+  .beams {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .monsoon,
+  .beams {
+    max-width: 1024px;
+  }
+}
+
+/* monsoon */
 .monsoon {
   background: white;
   color: #333;
 }
 
-.beams {
-  background: linear-gradient(rgba(0,0,0,0.7), white);
+.monsoon h2 {
+  margin-bottom: 5px;
 }
+
+.monsoon p {
+  margin-bottom: 3rem;
+  font-weight: 400;
+  color: #777;
+}
+
+@media (min-width: 768px) {
+  .monsoon img {
+    max-width: 85%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .monsoon {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .monsoon .monsoon-text {
+    padding: 0 2rem;
+  }
+
+  .monsoon img {
+    order: -1;
+  }
+}
+
+/* beams */
+/* .beams {
+  background: linear-gradient(rgba(0,0,0,0.7) 75%, white);
+} */
