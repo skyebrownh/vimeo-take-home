@@ -13,7 +13,8 @@ const Arrow = ({ direction, handleClick, icon }) => {
 const ImgSlide = ({ url, title, desc }) => {
   return (
     <div className="img-slide">
-      <img src={url} />
+      {/* <img src={url} /> */}
+      <div className="bg-image"></div>
       <div className="content">
         <h3>{title}</h3>
         <p>{desc}</p>
