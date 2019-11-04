@@ -1,26 +1,40 @@
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight, faPlayCircle } from '@fortawesome/free-solid-svg-icons';
 
 import images from '../utlis/constants';
 
 const Arrow = ({ direction, handleClick, icon }) => {
   return (
     <button className={`arrow ${direction}`} onClick={handleClick}>
-      {icon}
+      <FontAwesomeIcon icon={icon} />
     </button>
   );
 }
 
 const ImgSlide = ({ url, title, desc }) => {
+  const bgImgStyle = {
+    backgroundImage: `url(${url})`,
+    filter: 'blur(8px)',
+    height: '100%',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover'
+  };
+
   return (
     <div className="img-slide">
       {/* <img src={url} /> */}
-      <div className="bg-image"></div>
+      <div 
+        className="bg-image"
+        style={bgImgStyle}
+      ></div>
       <div className="content">
         <h3>{title}</h3>
         <p>{desc}</p>
         <div className="btn-group">
           <button className="buy-now">
-            {/* TODO: icon */}
+            <FontAwesomeIcon icon={faPlayCircle} />
             Buy Now
           </button>
           <button className="trailer">Watch Trailer</button>
@@ -49,13 +63,13 @@ const Carousel = () => {
 
   return (
     <section className="carousel">
-      <Arrow direction={'left'} handleClick={prev} icon={/* TODO: */} />
+      <Arrow direction={'left'} handleClick={prev} icon={faChevronLeft} />
       <ImgSlide
         url={images[currIndx].url}
         title={images[currIndx].title}
         desc={images[currIndx].desc}
       />
-      <Arrow direction={'right'} handleClick={next} icon={/* TODO: */} />
+      <Arrow direction={'right'} handleClick={next} icon={faChevronRight} />
     </section>
   );
 }
