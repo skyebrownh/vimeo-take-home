@@ -1,3 +1,4 @@
+// sample data for testing
 import Img0 from '../images/hunt-for-the-wilderpeople.jpg';
 import Img1 from '../images/nichts-passiert.jpeg';
 import Img2 from '../images/vice-versa-good-company.jpg';

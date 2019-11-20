@@ -19,7 +19,7 @@ const ImgSlide = ({ url, title, desc }) => {
     // backgroundPosition: 'center',
     // backgroundRepeat: 'no-repeat',
     // backgroundSize: 'cover',
-    background: 'lightblue',
+    background: 'slateblue',
     height: '500px'
   };
 
@@ -53,6 +53,7 @@ const ImgSlide = ({ url, title, desc }) => {
 const Carousel = () => {
   const [currIndx, setcurrIndx] = useState(0);
 
+  // TODO: sliding screen transition
   const prev = () => {
     const lastIndx = images.length - 1;
     const shouldReset = currIndx === 0;
