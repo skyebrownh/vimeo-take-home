@@ -3,7 +3,22 @@ import './styles/App.css';
 
 import Carousel from './components/Carousel';
 
+// import vimeo from 'vimeo';
+
 const App = () => {
+  // const Vimeo = vimeo.Vimeo;
+  // const client = new Vimeo(`{${client_id}}`, `{${client_secret}}`,`{${token}}`);
+
+  // client.request({
+  //   method: 'GET',
+  //   path: '/tutorial',
+  // }, function(error, body, status_code, headers) {
+  //   if (error) console.log(error);
+  //   console.log(body);
+  // });
+
+  // console.log(client_id, client_secret, token);
+
   return (
     <main>
       <section className="monsoon">
