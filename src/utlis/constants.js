@@ -4,7 +4,7 @@ import Img2 from '../images/vice-versa-good-company.jpg';
 import Img3 from '../images/the-fourth-phase.jpg';
 import Img4 from '../images/full-moon.jpg';
 
-export const images = [
+const images = [
   { 
     url: Img0,
     title: 'Hunt for the Wilderpeople',
@@ -31,3 +31,5 @@ export const images = [
     desc: 'Be inspired by women who push boundaries. FULL MOON showcases the legends, current icons and future prodigies of this ever-evolving lifestyle sport.'
   }
 ];
+
+export default images;

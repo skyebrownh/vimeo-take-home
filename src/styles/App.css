@@ -50,6 +50,40 @@ p {
 }
 
 /* carousel */
+.carousel {
+  position: relative;
+  width: 100vw;
+  z-index: 2;
+}
+
+.carousel .arrow {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  z-index: 4;
+}
+
+.carousel .arrow .left {
+  left: 1rem;
+}
+
+.carousel .arrow .right {
+  right: 1rem;
+}
+
+.carousel .img-slide {
+  position: relative;
+  width: 100vw;
+}
+
+.carousel .img-slide .content {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  text-align: center;
+  width: 100vw;
+  z-index: 3;  
+}
 
 /* media queries */
 @media (min-width: 425px) {

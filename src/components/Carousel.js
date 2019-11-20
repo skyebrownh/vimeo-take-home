@@ -14,12 +14,13 @@ const Arrow = ({ direction, handleClick, icon }) => {
 
 const ImgSlide = ({ url, title, desc }) => {
   const bgImgStyle = {
-    backgroundImage: `url(${url})`,
-    filter: 'blur(8px)',
-    height: '100%',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover'
+    // TODO: backgroundImage: `url(${url})`,
+    // TODO: filter: 'blur(8px)',
+    // backgroundPosition: 'center',
+    // backgroundRepeat: 'no-repeat',
+    // backgroundSize: 'cover',
+    background: 'lightblue',
+    height: '500px'
   };
 
   return (
