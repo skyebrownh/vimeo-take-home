@@ -63,11 +63,11 @@ p {
   z-index: 4;
 }
 
-.carousel .arrow .left {
+.carousel .arrow.left {
   left: 1rem;
 }
 
-.carousel .arrow .right {
+.carousel .arrow.right {
   right: 1rem;
 }
 
@@ -78,11 +78,22 @@ p {
 
 .carousel .img-slide .content {
   position: absolute;
-  top: 50%;
+  top: 25%; /* FIXME: hard coded value? */
   left: 0;
-  text-align: center;
   width: 100vw;
-  z-index: 3;  
+  padding: 0 4rem;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  
+}
+
+.carousel .img-slide .content .content-img {
+
+}
+
+.carousel .img-slide .content .content-text {
+  
 }
 
 /* media queries */
