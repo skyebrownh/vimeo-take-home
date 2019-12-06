@@ -12,7 +12,7 @@ const Arrow = ({ direction, handleClick, icon }) => {
   );
 }
 
-const ImgSlide = ({ url, title, desc }) => {
+const ImgSlide = ({ url, title, desc, prev, next }) => {
   const bgImgStyle = {
     // TODO: backgroundImage: `url(${url})`,
     // TODO: filter: 'blur(8px)', OPACITY INSTEAD???!!!!
@@ -25,7 +25,7 @@ const ImgSlide = ({ url, title, desc }) => {
 
   return (
     <div className="img-slide">
-      {/* <img src={url} /> */}
+      <Arrow direction={'left'} handleClick={prev} icon={faChevronLeft} />
       <div 
         className="bg-image"
         style={bgImgStyle}
@@ -46,6 +46,7 @@ const ImgSlide = ({ url, title, desc }) => {
           </div>
         </div>
       </div>
+      <Arrow direction={'right'} handleClick={next} icon={faChevronRight} />
     </div>
   );
 }
@@ -53,7 +54,6 @@ const ImgSlide = ({ url, title, desc }) => {
 const Carousel = () => {
   const [currIndx, setcurrIndx] = useState(0);
 
-  // TODO: sliding screen transition
   const prev = () => {
     const lastIndx = images.length - 1;
     const shouldReset = currIndx === 0;
@@ -70,13 +70,13 @@ const Carousel = () => {
 
   return (
     <section className="carousel">
-      <Arrow direction={'left'} handleClick={prev} icon={faChevronLeft} />
       <ImgSlide
         url={images[currIndx].url}
         title={images[currIndx].title}
         desc={images[currIndx].desc}
+        prev={prev}
+        next={next}
       />
-      <Arrow direction={'right'} handleClick={next} icon={faChevronRight} />
     </section>
   );
 }

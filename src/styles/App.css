@@ -56,7 +56,12 @@ p {
   z-index: 2;
 }
 
-.carousel .arrow {
+.carousel .img-slide {
+  position: relative;
+  width: 100vw;
+}
+
+.carousel .img-slide .arrow {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -67,17 +72,12 @@ p {
   font-size: 2.5rem;
 }
 
-.carousel .arrow.left {
+.carousel .img-slide .arrow.left {
   left: 3rem;
 }
 
-.carousel .arrow.right {
+.carousel .img-slide .arrow.right {
   right: 3rem;
-}
-
-.carousel .img-slide {
-  position: relative;
-  width: 100vw;
 }
 
 .carousel .img-slide .content {
@@ -92,8 +92,12 @@ p {
   align-items: center;
 }
 
-.carousel .img-slide .content .content-img img {
+.carousel .img-slide .content .content-img {
+  height: 300px;
+}
 
+.carousel .img-slide .content .content-img img {
+  max-height: 100%;
 }
 
 .carousel .img-slide .content .content-text {
