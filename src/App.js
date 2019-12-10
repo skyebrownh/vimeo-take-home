@@ -3,6 +3,8 @@ import './styles/App.css';
 
 import Carousel from './components/Carousel';
 
+import Slider from './components/Slider';
+
 // import vimeo from 'vimeo';
 // const client_id = process.env.REACT_APP_CLIENT_ID;
 // const client_secret = process.env.REACT_APP_CLIENT_SECRET;
@@ -49,7 +51,8 @@ const App = () => {
           </div>
         </div>
       </section>
-      <Carousel />
+      {/* <Carousel /> */}
+      <Slider />
     </main>
   );
 }
