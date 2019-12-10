@@ -14,8 +14,9 @@ const Arrow = ({ direction, handleClick, icon }) => {
 
 const ImgSlide = ({ url, title, desc, prev, next }) => {
   const bgImgStyle = {
-    // TODO: backgroundImage: `url(${url})`,
-    // TODO: filter: 'blur(8px)', OPACITY INSTEAD???!!!!
+    // backgroundImage: `url(${url})`,
+    // // filter: 'blur(8px)',
+    // // opacity: '0.4',
     // backgroundPosition: 'center',
     // backgroundRepeat: 'no-repeat',
     // backgroundSize: 'cover',
@@ -32,17 +33,17 @@ const ImgSlide = ({ url, title, desc, prev, next }) => {
       ></div>
       <div className="content">
         <div className="content-img">
-          <img src={url} alt={desc}/>
+          <img src={url} alt={title}/>
         </div>
         <div className="content-text">
           <h3>{title}</h3>
           <p>{desc}</p>
           <div className="btn-group">
-            <button className="buy-now">
-              <FontAwesomeIcon icon={faPlayCircle} />
+            <button id="buy-now">
+              <FontAwesomeIcon icon={faPlayCircle} style={{color: 'white', fontSize: '1rem'}} />
               Buy Now
             </button>
-            <button className="trailer">Watch Trailer</button>
+            <button id="trailer">Watch Trailer</button>
           </div>
         </div>
       </div>

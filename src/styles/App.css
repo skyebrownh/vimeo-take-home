@@ -58,7 +58,7 @@ p {
 
 .carousel .img-slide {
   position: relative;
-  width: 100vw;
+  width: 100%;
 }
 
 .carousel .img-slide .arrow {
@@ -98,6 +98,7 @@ p {
 
 .carousel .img-slide .content .content-img img {
   max-height: 100%;
+  object-fit: contain;
 }
 
 .carousel .img-slide .content .content-text {
@@ -114,6 +115,27 @@ p {
 .carousel .img-slide .content p {
   color: lightgray;
   font-weight: 100;
+}
+
+.carousel .img-slide .btn-group button {
+  outline: none;
+  padding: 12px;
+  font-weight: bold;
+  border-radius: 8px;
+  display: inline-block;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.carousel .img-slide .btn-group #buy-now {
+  border: none;
+  margin-right: 15px;
+  background: rgb(13, 107, 158);
+}
+
+.carousel .img-slide .btn-group #trailer {
+  border: 1px solid white;
+  background: transparent;
 }
 
 /* media queries */
