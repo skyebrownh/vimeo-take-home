@@ -2,13 +2,8 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight, faPlayCircle } from '@fortawesome/free-solid-svg-icons';
 
+import imageData from '../utlis/constants';
 import '../styles/Slider.css';
-
-import Img0 from '../images/hunt-for-the-wilderpeople.jpg';
-import Img1 from '../images/nichts-passiert.jpeg';
-import Img2 from '../images/vice-versa-good-company.jpg';
-import Img3 from '../images/the-fourth-phase.jpg';
-import Img4 from '../images/full-moon.jpg';
 
 const LeftArrow = ({ handleClick }) => {
   return (
@@ -26,7 +21,7 @@ const RightArrow = ({ handleClick }) => {
   );
 }
 
-const Slide = ({ image, colorOverlay }) => {
+const Slide = ({ image, colorOverlay, title, desc }) => {
   const styles = {
     backgroundImage: `url(${image})`,
     backgroundSize: 'cover',
@@ -36,13 +31,29 @@ const Slide = ({ image, colorOverlay }) => {
   return (
     <div className="slide" style={styles}>
       <div className="color-overlay" style={{ background: `${colorOverlay}` }}></div>
+      <div className="content">
+        <div className="content-img">
+          <img src={image} alt={title}/>
+        </div>
+        <div className="content-text">
+          <h3>{title}</h3>
+          <p>{desc}</p>
+          <div className="btn-group">
+            <button id="buy-now">
+              <FontAwesomeIcon icon={faPlayCircle} style={{color: 'white', fontSize: '1rem'}} />
+              Buy Now
+            </button>
+            <button id="trailer">Watch Trailer</button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
 
 const Slider = () => {
   // constants
-  const images = [Img0, Img1, Img2, Img3, Img4];
+  // const images = [Img0, Img1, Img2, Img3, Img4];
   const imageColors = [
     'rgba(129, 189, 225, 0.75)',
     'rgba(129, 189, 225, 0.75)',
@@ -63,7 +74,7 @@ const Slider = () => {
   }
 
   const next = () => {
-    if (currIndex === images.length - 1) return;
+    if (currIndex === imageData.length - 1) return;
     setCurrIndex(currIndex + 1);
     setTranslateValue(translateValue + -(slideWidth()));
   }
@@ -78,8 +89,16 @@ const Slider = () => {
         className="slide-wrapper"
         style={{ transform: `translateX(${translateValue}px)`, transition: 'transform ease-out 0.45s' }}
       >
-        {images.map((image, i) => {
-          return <Slide key={i} image={image} colorOverlay={imageColors[i]} />;
+        {imageData.map((image, i) => {
+          return (
+            <Slide 
+              key={i} 
+              image={image.url} 
+              colorOverlay={imageColors[i]}
+              title={image.title}
+              desc={image.desc}
+            />
+          );
         })}
       </div>
       <LeftArrow handleClick={prev} />

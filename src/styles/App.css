@@ -50,7 +50,7 @@ p {
 }
 
 /* carousel */
-.carousel {
+/* .carousel {
   position: relative;
   width: 100vw;
   z-index: 2;
@@ -78,9 +78,9 @@ p {
 
 .carousel .img-slide .arrow.right {
   right: 3rem;
-}
+} */
 
-.carousel .img-slide .content {
+.slider .slide .content {
   position: absolute;
   top: 25%; /* FIXME: hard coded value? */
   left: 0;
@@ -92,32 +92,33 @@ p {
   align-items: center;
 }
 
-.carousel .img-slide .content .content-img {
+.slider .slide .content .content-img {
   height: 300px;
 }
 
-.carousel .img-slide .content .content-img img {
+.slider .slide .content .content-img img {
   max-height: 100%;
   object-fit: contain;
 }
 
-.carousel .img-slide .content .content-text {
+.slider .slide .content .content-text {
   width: 55%;
+  white-space: initial;
 }
 
-.carousel .img-slide .content h3 {
+.slider .slide .content h3 {
   color: white;
   margin-bottom: 25px;
   font-size: 2rem;
   font-weight: 400;
 }
 
-.carousel .img-slide .content p {
-  color: lightgray;
+.slider .slide .content p {
+  color: white;
   font-weight: 100;
 }
 
-.carousel .img-slide .btn-group button {
+.slider .slide .btn-group button {
   outline: none;
   padding: 12px;
   font-weight: bold;
@@ -127,13 +128,13 @@ p {
   font-size: 0.9rem;
 }
 
-.carousel .img-slide .btn-group #buy-now {
+.slider .slide .btn-group #buy-now {
   border: none;
   margin-right: 15px;
   background: rgb(13, 107, 158);
 }
 
-.carousel .img-slide .btn-group #trailer {
+.slider .slide .btn-group #trailer {
   border: 1px solid white;
   background: transparent;
 }
