@@ -26,18 +26,30 @@ const RightArrow = ({ handleClick }) => {
   );
 }
 
-const Slide = ({ image }) => {
+const Slide = ({ image, colorOverlay }) => {
   const styles = {
     backgroundImage: `url(${image})`,
     backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat'
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center'
   };
-  return <div className="slide" style={styles}></div>;
+  return (
+    <div className="slide" style={styles}>
+      <div className="color-overlay" style={{ background: `${colorOverlay}` }}></div>
+    </div>
+  );
 }
 
 const Slider = () => {
   // constants
   const images = [Img0, Img1, Img2, Img3, Img4];
+  const imageColors = [
+    'rgba(129, 189, 225, 0.75)',
+    'rgba(129, 189, 225, 0.75)',
+    'rgba(224, 202, 164, 0.75)',
+    'rgba(129, 189, 225, 0.75)',
+    'rgba(0, 0, 0, 0.4)'
+  ];
 
   // state
   const [currIndex, setCurrIndex] = useState(0);
@@ -67,7 +79,7 @@ const Slider = () => {
         style={{ transform: `translateX(${translateValue}px)`, transition: 'transform ease-out 0.45s' }}
       >
         {images.map((image, i) => {
-          return <Slide key={i} image={image} />;
+          return <Slide key={i} image={image} colorOverlay={imageColors[i]} />;
         })}
       </div>
       <LeftArrow handleClick={prev} />
