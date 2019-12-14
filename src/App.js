@@ -5,22 +5,22 @@ import Carousel from './components/Carousel';
 
 import Slider from './components/Slider';
 
-// import vimeo from 'vimeo';
-// const client_id = process.env.REACT_APP_CLIENT_ID;
-// const client_secret = process.env.REACT_APP_CLIENT_SECRET;
-// const token = process.env.REACT_APP_TOKEN;
+import vimeo from 'vimeo';
+const client_id = process.env.REACT_APP_CLIENT_ID;
+const client_secret = process.env.REACT_APP_CLIENT_SECRET;
+const token = process.env.REACT_APP_TOKEN;
 
 const App = () => {
-  // const Vimeo = vimeo.Vimeo;
-  // const client = new Vimeo(`${client_id}`, `${client_secret}`,`${token}`);
+  const Vimeo = vimeo.Vimeo;
+  const client = new Vimeo(`${client_id}`, `${client_secret}`,`${token}`);
 
-  // client.request({
-  //   method: 'GET',
-  //   path: '/tutorial',
-  // }, function(error, body, status_code, headers) {
-  //   if (error) console.log(error);
-  //   console.log(body);
-  // });
+  client.request({
+    method: 'GET',
+    path: '/ondemand/pages/huntforthewilderpeople'
+  }, function(error, body, status_code, headers) {
+    if (error) console.log(error);
+    console.log(body);
+  });
 
   return (
     <main>
