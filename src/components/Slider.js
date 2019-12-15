@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight, faPlayCircle } from '@fortawesome/free-solid-svg-icons';
 
-import imageData from '../utlis/constants';
+// import imageData from '../utlis/constants';
 import '../styles/Slider.css';
 
 const LeftArrow = ({ handleClick }) => {
@@ -51,9 +51,9 @@ const Slide = ({ image, colorOverlay, title, desc }) => {
   );
 }
 
-const Slider = () => {
+const Slider = ({ data }) => {
+  console.log(data);
   // constants
-  // const images = [Img0, Img1, Img2, Img3, Img4];
   const imageColors = [
     'rgba(129, 189, 225, 0.75)',
     'rgba(129, 189, 225, 0.75)',
@@ -74,7 +74,7 @@ const Slider = () => {
   }
 
   const next = () => {
-    if (currIndex === imageData.length - 1) return;
+    if (currIndex === data.length - 1) return;
     setCurrIndex(currIndex + 1);
     setTranslateValue(translateValue + -(slideWidth()));
   }
@@ -89,7 +89,8 @@ const Slider = () => {
         className="slide-wrapper"
         style={{ transform: `translateX(${translateValue}px)`, transition: 'transform ease-out 0.45s' }}
       >
-        {imageData.map((image, i) => {
+        {data.map((image, i) => {
+          {/* FIXME: async issue with data prop */}
           return (
             <Slide 
               key={i} 
