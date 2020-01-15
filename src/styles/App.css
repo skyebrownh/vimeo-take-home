@@ -105,9 +105,17 @@ p {
   background: rgb(13, 107, 158);
 }
 
+.slider .slide .btn-group #buy-now:hover {
+  cursor: pointer;
+}
+
 .slider .slide .btn-group #trailer {
   border: 1px solid white;
   background: transparent;
+}
+
+.slider .slide .btn-group #trailer:hover {
+  cursor: pointer;
 }
 
 /* media queries */
