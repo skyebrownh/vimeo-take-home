@@ -44,3 +44,23 @@
 .arrow.right {
   right: 3rem;
 }
+
+@media (min-width: 425px) {
+  .arrow.left {
+    left: 1rem;
+  }
+
+  .arrow.right {
+    right: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .arrow.left {
+    left: 2rem;
+  }
+
+  .arrow.right {
+    right: 2rem;
+  }
+}

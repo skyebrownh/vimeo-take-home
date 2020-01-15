@@ -49,43 +49,13 @@ p {
   margin-bottom: 3rem;
 }
 
-/* carousel */
-/* .carousel {
-  position: relative;
-  width: 100vw;
-  z-index: 2;
-}
-
-.carousel .img-slide {
-  position: relative;
-  width: 100%;
-}
-
-.carousel .img-slide .arrow {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  z-index: 4;
-  background: none;
-  border: none;
-  outline: none;
-  font-size: 2.5rem;
-}
-
-.carousel .img-slide .arrow.left {
-  left: 3rem;
-}
-
-.carousel .img-slide .arrow.right {
-  right: 3rem;
-} */
-
+/* slider */
 .slider .slide .content {
   position: absolute;
-  top: 25%; /* FIXME: hard coded value? */
+  top: 25%;
   left: 0;
   width: 100vw;
-  padding: 0 15rem;
+  padding: 0 3rem;
   z-index: 3;
   display: flex;
   justify-content: space-evenly;
@@ -102,7 +72,8 @@ p {
 }
 
 .slider .slide .content .content-text {
-  width: 55%;
+  width: 80%;
+  margin-left: 5px;
   white-space: initial;
 }
 
@@ -162,6 +133,14 @@ p {
     max-width: 85%;
     margin: 0 auto;
   }
+
+  .slider .slide .content {
+    padding: 0 5rem;
+  }
+
+  .slider .slide .content .content-text {
+    width: 65%;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -185,5 +164,14 @@ p {
   .monsoon img,
   .move2 img {
     order: -1;
+  }
+
+  .slider .slide .content {
+    padding: 0 15rem;
+  }
+
+  .slider .slide .content .content-text {
+    width: 55%;
+    margin-left: 0;
   }
 }
