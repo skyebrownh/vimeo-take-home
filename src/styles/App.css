@@ -49,75 +49,47 @@ p {
   margin-bottom: 3rem;
 }
 
-/* carousel */
-.carousel {
-  position: relative;
-  width: 100vw;
-  z-index: 2;
-}
-
-.carousel .img-slide {
-  position: relative;
-  width: 100%;
-}
-
-.carousel .img-slide .arrow {
-  cursor: pointer;
+/* slider */
+.slider .slide .content {
   position: absolute;
-  top: 50%;
-  z-index: 4;
-  background: none;
-  border: none;
-  outline: none;
-  font-size: 2.5rem;
-}
-
-.carousel .img-slide .arrow.left {
-  left: 3rem;
-}
-
-.carousel .img-slide .arrow.right {
-  right: 3rem;
-}
-
-.carousel .img-slide .content {
-  position: absolute;
-  top: 25%; /* FIXME: hard coded value? */
+  top: 25%;
   left: 0;
   width: 100vw;
-  padding: 0 15rem;
+  padding: 0 3rem;
   z-index: 3;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
 
-.carousel .img-slide .content .content-img {
+.slider .slide .content .content-img {
   height: 300px;
 }
 
-.carousel .img-slide .content .content-img img {
+.slider .slide .content .content-img img {
   max-height: 100%;
   object-fit: contain;
 }
 
-.carousel .img-slide .content .content-text {
-  width: 55%;
+.slider .slide .content .content-text {
+  width: 80%;
+  margin-left: 5px;
+  white-space: initial;
 }
 
-.carousel .img-slide .content h3 {
+.slider .slide .content h3 {
   color: white;
   margin-bottom: 25px;
   font-size: 2rem;
   font-weight: 400;
 }
 
-.carousel .img-slide .content p {
-  color: lightgray;
+.slider .slide .content p {
+  color: white;
   font-weight: 100;
 }
 
-.carousel .img-slide .btn-group button {
+.slider .slide .btn-group button {
   outline: none;
   padding: 12px;
   font-weight: bold;
@@ -127,15 +99,23 @@ p {
   font-size: 0.9rem;
 }
 
-.carousel .img-slide .btn-group #buy-now {
+.slider .slide .btn-group #buy-now {
   border: none;
   margin-right: 15px;
   background: rgb(13, 107, 158);
 }
 
-.carousel .img-slide .btn-group #trailer {
+.slider .slide .btn-group #buy-now:hover {
+  cursor: pointer;
+}
+
+.slider .slide .btn-group #trailer {
   border: 1px solid white;
   background: transparent;
+}
+
+.slider .slide .btn-group #trailer:hover {
+  cursor: pointer;
 }
 
 /* media queries */
@@ -161,6 +141,14 @@ p {
     max-width: 85%;
     margin: 0 auto;
   }
+
+  .slider .slide .content {
+    padding: 0 5rem;
+  }
+
+  .slider .slide .content .content-text {
+    width: 65%;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -184,5 +172,14 @@ p {
   .monsoon img,
   .move2 img {
     order: -1;
+  }
+
+  .slider .slide .content {
+    padding: 0 15rem;
+  }
+
+  .slider .slide .content .content-text {
+    width: 55%;
+    margin-left: 0;
   }
 }
