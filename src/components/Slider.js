@@ -37,7 +37,7 @@ const Slide = ({ image, colorOverlay, title, desc }) => {
         </div>
         <div className="content-text">
           <h3>{title}</h3>
-          <p>{desc}</p>
+          <p>{desc.length > 500 ? desc.substring(0, 500) + '...' : desc}</p>
           <div className="btn-group">
             <button id="buy-now">
               <FontAwesomeIcon icon={faPlayCircle} style={{color: 'white', fontSize: '1rem'}} />
@@ -52,7 +52,9 @@ const Slide = ({ image, colorOverlay, title, desc }) => {
 }
 
 const Slider = ({ data }) => {
+  // we are sure data is there since Slider is only rendered after async data is fetched
   console.log(data);
+  console.log(data.length);
   // constants
   const imageColors = [
     'rgba(129, 189, 225, 0.75)',
@@ -61,6 +63,18 @@ const Slider = ({ data }) => {
     'rgba(129, 189, 225, 0.75)',
     'rgba(0, 0, 0, 0.4)'
   ];
+  const slides = data.map((image, i) => {
+    return (
+      <Slide 
+        key={i}
+        image={image.url}
+        colorOverlay={imageColors[i]}
+        title={image.title}
+        desc={image.desc}
+      />
+    );
+  });
+  console.log(slides);
 
   // state
   const [currIndex, setCurrIndex] = useState(0);
@@ -88,20 +102,7 @@ const Slider = ({ data }) => {
       <div 
         className="slide-wrapper"
         style={{ transform: `translateX(${translateValue}px)`, transition: 'transform ease-out 0.45s' }}
-      >
-        {data.map((image, i) => {
-          {/* FIXME: async issue with data prop */}
-          return (
-            <Slide 
-              key={i} 
-              image={image.url} 
-              colorOverlay={imageColors[i]}
-              title={image.title}
-              desc={image.desc}
-            />
-          );
-        })}
-      </div>
+      >{slides}</div>
       <LeftArrow handleClick={prev} />
       <RightArrow handleClick={next} />
     </div>
